@@ -8,7 +8,7 @@ import './test.css'
         const { value,increaseAction } = this.props;
         return (
             <div>
-            <p id="test">Value is:</p>
+            <p id="test" className="h1">Value is:</p>
             <p> {value}</p>
             <p> Increase value with 1:</p>
             <button onClick={increaseAction}>Increase</button>

@@ -27,6 +27,7 @@
     "preact-cli": "^2.0.0"
   },
   "dependencies": {
+    "bootstrap": "^4.1.0",
     "history": "^4.7.2",
     "preact": "^8.1.0",
     "preact-redux": "^1.2.0",
