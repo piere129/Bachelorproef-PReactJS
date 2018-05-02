@@ -15,3 +15,7 @@ export const increaseAction = () => dispatch => {
 	dispatch({type: 'increase'});
 }
 
+export const registerNewUser = values => dispatch => {
+
+	dispatch({type: 'fetchEmail', res: values.email});
+};

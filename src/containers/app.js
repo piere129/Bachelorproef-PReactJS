@@ -1,5 +1,5 @@
 import {h, Component} from 'preact';
-import {Provider} from 'preact-redux';
+import {Provider} from 'react-redux';
 import Store from '../store/store-index';
 
 const store = Store;

@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import { routerReducer} from 'preact-router-redux';
-import { testReducer } from './test.reducer';
-import { fetchProductsReducer } from './fetchProducts.reducer';
+import { fetchAllReducer } from './FetchAllReducer.reducer'
+import { fetchEmailReducer } from './FetchEmailReducer.reducer';
+import { reducer as formReducer } from 'redux-form';
 
 export default combineReducers({
-	routing: routerReducer,
-	testReducer: testReducer,
-	fetchProductsReducer: fetchProductsReducer
+	fetchAllReducer,
+	fetchEmailReducer,
+	form: formReducer
 });
