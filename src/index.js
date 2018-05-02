@@ -1,14 +1,12 @@
 import App from './components/app';
-import Routes from './routes';
 import './style';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import Tester from './components/test/test';
-import Webstore from './components/webstore/webstore';
+import Routes from './routes';
 
 export default () => (
 	<div id="outer">
-			<App>
-				<Webstore/>
-			</App>
+		<App>
+			<Routes />
+		</App>
 	</div>
 );

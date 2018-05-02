@@ -1,24 +1,29 @@
-import  {h, Component } from 'preact';
-import { connect } from 'preact-redux';
-import { HashRouter as Router, Route, Switch, Redirect } from 'preact-router-redux';
-
+import {h, Component} from 'preact';
+import {connect} from 'preact-redux';
+import {Router, Route, Switch, Redirect} from 'react-router-dom';
+import createBrowserHistory from 'history/createBrowserHistory';
+import Parent from './components/Parent/Parent';
 import Tester from './components/test/test';
-import Webstore from './components/webstore/webstore';
-import App from './components/app';
+
+export const history = createBrowserHistory();
 
 class AppRouteComponent extends Component {
-    render() {
-        return (
-            <Router>
-                <Switch>
-                    <Route exact path="/" component={Tester} />
-                    <Redirect to="/" />
-                </Switch>
-            </Router>
-        );
-    }
+	render(props, state) {
+		return (
+			<Router history={history}>
+				<Switch>
+					<Parent>
+						<Switch>
+							<Route exact path="/" component={Tester} />
+							<Redirect to="/" />
+						</Switch>
+					</Parent>
+				</Switch>
+			</Router>
+		);
+	}
 }
 
-const Routes = connect(({ }) => ({ }))(AppRouteComponent);
+const Routes = connect(({}) => ({}))(AppRouteComponent);
 
 export default Routes;

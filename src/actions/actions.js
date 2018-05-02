@@ -1,12 +1,17 @@
 import {Datainitialiser} from '../data/DataInitialiser';
 
-var data = new Datainitialiser();
-
-export const increaseAction = () => ({ type: 'increase' });
-
 export const fetchAllProducts = () => dispatch => {
-        dispatch({
-            type: 'fetchAllProducts',
-            res: data.products
-        });  
+
+	let d = new Datainitialiser();
+	console.log(d.products);
+
+	dispatch({
+		type: 'fetchAllProducts',
+		res: d.products
+	});
 };
+
+export const increaseAction = () => dispatch => {
+	dispatch({type: 'increase'});
+}
+
