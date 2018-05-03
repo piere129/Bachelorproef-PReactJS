@@ -8,7 +8,7 @@ export default class App extends Component {
 	render(props, state) {
 		return (
 			<Provider store={store}>
-				<div className="main-container">
+				<div class="main-container">
 					{props.children}
 				</div>
 			</Provider>

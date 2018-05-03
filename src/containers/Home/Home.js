@@ -18,10 +18,10 @@ export class HomeComponent extends Component {
 		const {items} = props;
 
 		return (
-			<div className="wrapper">
-				<div className="block">
+			<div class="wrapper">
+				<div class="block">
 					<h1>Products:</h1>
-					<div className="btn-group" role="group" aria-label="Basic example">
+					<div class="btn-group" role="group" aria-label="Basic example">
 						<p> Filter by category: </p>
 						<button type="button" className="btn btn-secondary">Game</button>
 						<button type="button" className="btn btn-secondary">Household</button>

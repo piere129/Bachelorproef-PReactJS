@@ -3,21 +3,19 @@ import {Link} from 'react-router-dom';
 import './Products.css';
 
 export class Products extends Component {
-	render() {
+	render(props, state) {
 
 		return (
-
 			<div>
-				<meta name="viewport" content="width=device-width" />
 				{
-					this.props.items.map(item => {
+					props.items.map(item => {
 
 						return (
 							<Link to={'/projects/' + item.name} key={item.name}>
-								<figure className="snip1418">
+								<figure class="snip1418">
 									<img src={item.image} />
-									<div className="add-to-cart">
-										<i className="ion-android-add"></i>
+									<div class="add-to-cart">
+										<i class="ion-android-add"></i>
 										<span>Add to Cart</span>
 									</div>
 									<figcaption>
@@ -29,7 +27,6 @@ export class Products extends Component {
 									</figcaption>
 								</figure>
 							</Link>
-
 						);
 					})
 				}

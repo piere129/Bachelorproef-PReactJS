@@ -113,13 +113,13 @@
     background-color: #2980b9;
 }
 
-@media screen and(max-width: 1200px) {
-	.snip1418{
+@media all and (max-width: 1200px) {
+	.snip1418  {
 		width: 33%;
 	}
 }
 
-@media screen and(max-width: 768px) {
+@media all and (max-width: 768px) {
 	.snip1418 {
 		width: 100%;
 	}
