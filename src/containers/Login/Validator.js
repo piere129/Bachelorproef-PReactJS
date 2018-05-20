@@ -1,10 +1,10 @@
 export const validate = values => {
 	const errors = {};
-	if (!values.identifier) {
-		errors.identifier = 'Cannot be empty!';
-	} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.identifier)) {
-		errors.identifier = 'Incorrect Email!';
-	}
+    if (!values.username) {
+        errors.username = 'Can not be empty!';
+    } else if (values.username.length < 3) {
+        errors.username = 'Must be at least 3 characters!';
+    }
 	if (!values.passwordLogin) {
 		errors.passwordLogin = 'Cannot be empty!';
 	} else if (values.passwordLogin.length < 3) {

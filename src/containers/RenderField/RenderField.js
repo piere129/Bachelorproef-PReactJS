@@ -1,5 +1,3 @@
-import {h, Component} from 'preact';
-
 const RenderField = ({
 						 input,
 						 label,

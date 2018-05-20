@@ -1,5 +1,5 @@
 import {h, Component} from 'preact';
-import {connect} from 'react-redux';
+import {connect} from 'preact-redux';
 import Header from '../Header/Header';
 
 class ParentComponent extends Component {

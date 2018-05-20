@@ -1,6 +1,5 @@
-import {h, Component} from 'preact';
-import {connect} from 'react-redux';
-import {Router, Route, Switch, Redirect} from 'react-router-dom';
+import { Component} from 'preact';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 
 import Home from './containers/Home/Home';
@@ -12,25 +11,25 @@ import LoginWrapper from './containers/Login/LoginWrapper';
 export const history = createBrowserHistory();
 
 class AppRouteComponent extends Component {
-	render(props, state) {
-		return (
-			<Router history={history}>
-				<Switch>
-					<Parent>
-						<Switch>
-							<Redirect exact from="/" to="/login"/>
-							<Route exact path="/login" component={LoginWrapper}/>
-							<Route exact path="/home" component={Home}/>
-							<Route exact path="/register" component={RegisterWrapper}/>
-							<Route path="/*" component={NotFoundPage}/>
-						</Switch>
-					</Parent>
-				</Switch>
-			</Router>
-		);
-	}
+    render() {
+        return (
+            <Router history={history}>
+                <Switch>
+                    <Parent>
+                        <Switch>
+                            <Redirect exact from="/" to="/login"/>
+                            <Route exact path="/login" component={LoginWrapper}/>
+                            <Route exact path="/home" component={Home}/>
+                            <Route exact path="/register" component={RegisterWrapper}/>
+                            <Route path="/*" component={NotFoundPage}/>
+                        </Switch>
+                    </Parent>
+                </Switch>
+            </Router>
+        );
+    }
 }
 
-const Routes = connect(({}) => ({}))(AppRouteComponent);
+AppRouteComponent.propTypes = {};
 
-export default Routes;
+export default AppRouteComponent;

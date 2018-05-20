@@ -1,18 +1,17 @@
-import React, {h, Component} from 'preact';
-import {connect} from 'react-redux';
-import {fetchAllProducts} from '../../actions/actions';
+import {Component} from 'preact';
+import {connect} from 'preact-redux';
+import {fetchProductsByCategory} from '../../actions/actions';
 import Products from "../Products/Products";
 import './Home.css';
 
 export class HomeComponent extends Component {
 
-	constructor(props) {
-		super(props);
-	}
-
-	componentWillMount() {
-		this.props.fetchAllProducts();
-	}
+    getItemsByCategory(category) {
+        this.props.fetchProductsByCategory(category);
+    }
+    componentWillMount() {
+        this.props.fetchProductsByCategory('all');
+    }
 
 	render(props, state) {
 		const {items} = props;
@@ -23,11 +22,12 @@ export class HomeComponent extends Component {
 					<h1>Products:</h1>
 					<div class="btn-group" role="group" aria-label="Basic example">
 						<p> Filter by category: </p>
-						<button type="button" className="btn btn-secondary">Game</button>
-						<button type="button" className="btn btn-secondary">Household</button>
-						<button type="button" className="btn btn-secondary">Gadget</button>
-						<button type="button" className="btn btn-secondary">Movie</button>
-						<button type="button" className="btn btn-secondary">Laptops</button>
+                        <button type="button" className="btn btn-secondary" onClick={() => this.getItemsByCategory('game')}>Game</button>
+                        <button type="button" className="btn btn-secondary" onClick={() => this.getItemsByCategory('household')}>Household</button>
+                        <button type="button" className="btn btn-secondary" onClick={() => this.getItemsByCategory('gadget')}>Gadget</button>
+                        <button type="button" className="btn btn-secondary" onClick={() => this.getItemsByCategory('movie')}>Movie</button>
+                        <button type="button" className="btn btn-secondary" onClick={() => this.getItemsByCategory('laptop')}>Laptops</button>
+                        <button type="button" className="btn btn-secondary" onClick={() => this.getItemsByCategory('all')}>All</button>
 					</div>
 				</div>
 				<Products items={items} />
@@ -38,20 +38,20 @@ export class HomeComponent extends Component {
 }
 
 function mapStateToProps(state) {
-	return {
-		items: state.fetchAllReducer.items,
-	};
+    return {
+        items: state.fetchProductsByCategoryReducer.items
+    };
 }
 
 function mapDispatchToProps() {
-	return {
-		fetchAllProducts,
-	};
+    return {
+        fetchProductsByCategory
+    };
 }
 
 const Home = connect(
-	mapStateToProps,
-	mapDispatchToProps()
+    mapStateToProps,
+    mapDispatchToProps()
 )(HomeComponent);
 
 export default Home;

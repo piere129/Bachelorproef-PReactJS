@@ -1,4 +1,3 @@
-import {h, Component} from 'preact';
 import {Field, reduxForm} from 'redux-form';
 import {validate, warn} from './Validator';
 import RenderField from '../RenderField/RenderField';

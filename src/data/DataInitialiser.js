@@ -141,14 +141,18 @@ export class Datainitialiser {
 	]
 
 
-	getProductsFiltered(category) {
-		if (category !== 'game' || category !== 'movie' || category !== 'gadget' || category !== 'household' || category !== 'laptop') {
-			throw new Error('category not found');
-		}
-		else {
-			return this.products.map(product => product.category === category);
-		}
-	}
+    getProductsFiltered(category) {
+        if (category !== 'game' && category !== 'movie' && category !== 'gadget' && category !== 'household' && category !== 'laptop' && category !== 'all') {
+            throw new Error('category not found');
+        }
+        else {
+            if (category === 'all') {
+                return this.products;
+            }
+            console.log(this.products.filter(product => product.category === category));
+            return this.products.filter(product => product.category === category);
+        }
+    }
 
 }
 

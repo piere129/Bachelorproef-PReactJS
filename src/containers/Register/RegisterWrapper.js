@@ -1,5 +1,4 @@
-import {h, Component} from 'preact';
-import {connect} from 'react-redux';
+import {Component} from 'preact';
 import RegisterUser from './Register';
 import {registerNewUser} from "../../actions/actions";
 
@@ -12,24 +11,13 @@ export class RegisterWrapperComponent extends Component {
 		return (
 			<div>
 			<p> {email}</p>
-			<RegisterUser onSubmit={registerNewUser}/>
+			<RegisterUser />
 			</div>
 		);
 	}
 
 };
 
-function mapStateToProps(state) {
-	return {email: state.fetchEmailReducer.email};
-}
-
-function mapDispatchToProps() {
-	return {registerNewUser};
-}
-
-const RegisterWrapper = connect(
-	mapStateToProps,
-	mapDispatchToProps()
-)(RegisterWrapperComponent);
+const RegisterWrapper = RegisterWrapperComponent;
 
 export default RegisterWrapper;
