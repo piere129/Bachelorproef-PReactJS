@@ -7,6 +7,7 @@ import Parent from './containers/Parent/Parent';
 import NotFoundPage from './containers/NotFoundPage/NotFoundPage';
 import RegisterWrapper from './containers/Register/RegisterWrapper';
 import LoginWrapper from './containers/Login/LoginWrapper';
+import Benchmark from "./containers/Benchmark/Benchmark";
 
 export const history = createBrowserHistory();
 
@@ -21,6 +22,7 @@ class AppRouteComponent extends Component {
                             <Route exact path="/login" component={LoginWrapper}/>
                             <Route exact path="/home" component={Home}/>
                             <Route exact path="/register" component={RegisterWrapper}/>
+                            <Route exact path="/benchmark" component={Benchmark}/>
                             <Route path="/*" component={NotFoundPage}/>
                         </Switch>
                     </Parent>

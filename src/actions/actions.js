@@ -12,3 +12,14 @@ export const fetchProductsByCategory = category => dispatch => {
     });
 };
 
+export const addItemToArray = () => dispatch => {
+    dispatch({
+        type: 'addItem',
+    });
+};
+
+export const removeItemFromArray = () => dispatch => {
+    dispatch({
+        type: 'removeItem',
+    });
+};

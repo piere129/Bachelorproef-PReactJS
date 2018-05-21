@@ -7,22 +7,23 @@ class HeaderComponent extends Component {
 
 	render(props, state) {
 
-        const {username} = this.props;
+        const {username} = props;
 
 		return (
 			<div class="header">
 				<div class="header-container">
-					<Link to="/home" class="logo">home</Link>
-                    {  this.props.username != "" ?
+					<Link to="/home" class="logo">Home</Link>
+                    <Link to="/benchmark" class="link">Benchmark</Link>
+                    {  props.username != "" ?
                         <div class="link">
                             Welkom {username}!
                         </div> : null
                     }
 					<div class="header-right">
-                        {  this.props.username != "" ? null :
+                        {  props.username != "" ? null :
                             <div>
-                                <Link to="/login" class="link">login</Link>
-                                <Link to="/register" class="link">register</Link>
+                                <Link to="/login" class="link">Login</Link>
+                                <Link to="/register" class="link">Register</Link>
                             </div>
                         }
 
